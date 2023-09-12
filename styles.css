@@ -1,85 +1,128 @@
-*{
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box; 
-   font-family: sans-serif;
+/* Reset default styles and set a base font-family */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-
-/*  */
-
-
-.nav1{
+/* Style for navigation bar at the top (nav1) */
+.nav1 {
     width: 100%;
-    height: 50px;
+    height: auto; /* Use 'auto' for height to adapt to content */
     color: white;
     background: #222f3e;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
 }
 
-.nav1 i{
+.nav1 i {
     margin: 0 5px;
 }
 
-.nav1 a{
+.nav1 a {
     text-decoration: none;
-    color:white;
+    color: white;
     padding: 5px 10px;
     background: rgb(158, 158, 232);
+    margin: 5px;
 }
-.nav2{
+
+/* Style for navigation bar at the top (nav2) */
+.nav2 {
     width: 100%;
-    height: 80px;
-    background: white ;
+    height: auto; /* Use 'auto' for height to adapt to content */
+    background: white;
     color: black;
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
     justify-content: space-between;
     align-items: center;
-    padding: 0 70px;
+    padding: 10px 5%;
 }
-.menu a{
+
+.menu a {
     text-decoration: none;
     color: black;
     padding: 10px 20px;
 }
-header{
+
+/* Style for the header section with background image */
+header {
     width: 100%;
-    height:100vh;
-    background: linear-gradient(rgba(0,0,0,0.7) 80% ,rgb(158, 158, 232)), url('wallpaper.jpg');
-    background-size: 100% 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 80%, rgb(158, 158, 232)), url('wallpaper.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-.h-text{
-    max-width: 600px;
+.h-text {
+    max-width: 90%;
     color: white;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
 
-.h-text h1{
+.h-text h1 {
     font-size: 3em;
-    font-family:  'Dancing Script', cursive ;
-}
-.h-text span{
-    color: rgb(158, 158, 232);
-    font-family:  'Dancing Script', cursive ;
-}
-.h-text p{
-    font-size: 20px;
-    margin: 40px 0;
-    line-height: 30px;
+    font-family: 'Dancing Script', cursive;
 }
 
-.h-text a{
+.h-text span {
+    color: rgb(158, 158, 232);
+    font-family: 'Dancing Script', cursive;
+}
+
+.h-text p {
+    font-size: 1.5em;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.h-text a {
     text-decoration: none;
     color: white;
     background: rgb(158, 158, 232);
     padding: 10px 20px;
-    margin: 0 15px;
-    letter-spacing: 5px;
+    margin: 10px;
+    letter-spacing: 2px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    /* Styles for screens with a maximum width of 768px (e.g., tablets and mobile phones) */
+    .nav1, .nav2 {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center;
+        text-align: center;
+    }
+    .nav1 i, .menu a {
+        margin: 5px 0;
+    }
+    .nav1 a {
+        margin: 5px 0;
+        padding: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    .h-text h1 {
+        font-size: 2em;
+    }
+    .h-text p {
+        font-size: 1.2em;
+    }
+
+    /* Additional styles for smaller screens (mobile phones) */
+    header {
+        background-attachment: scroll; /* Allow background image to scroll with content */
+        text-align: center;
+    }
+    .h-text {
+        padding: 20px; /* Add padding to the text content */
+    }
 }
